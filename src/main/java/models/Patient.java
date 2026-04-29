@@ -1,9 +1,6 @@
 package models;
 
-/**
- * Represents a patient in the hospital system.
- * Implements Comparable for priority-based sorting (by severity).
- */
+
 public class Patient implements Comparable<Patient> {
     private int id;
     private String name;
@@ -41,20 +38,11 @@ public class Patient implements Comparable<Patient> {
     public int getBedId() { return bedId; }
     public void setBedId(int bedId) { this.bedId = bedId; }
 
-    /** Priority 1 = Critical (highest), 5 = default (lowest) */
-    private int severityPriority() {
-        return switch (severity.toUpperCase()) {
-            case "CRITICAL" -> 1;
-            case "HIGH" -> 2;
-            case "MEDIUM" -> 3;
-            case "LOW" -> 4;
-            default -> 5;
-        };
-    }
-
     @Override
     public int compareTo(Patient other) {
-        return Integer.compare(this.severityPriority(), other.severityPriority());
+        Severity thisSeverity = Severity.fromString(this.severity);
+        Severity otherSeverity = Severity.fromString(other.severity);
+        return Integer.compare(thisSeverity.getPriority(), otherSeverity.getPriority());
     }
 
     @Override

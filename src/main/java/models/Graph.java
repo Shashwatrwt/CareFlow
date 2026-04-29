@@ -16,7 +16,6 @@ public class Graph {
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
-    // New: takes distance (km) and time (min) separately
     public void addEdge(String source, String destination, double distanceKm, double timeMin) {
         addNode(source);
         addNode(destination);
@@ -37,7 +36,7 @@ public class Graph {
         private final String destination;
         private final double distanceKm;
         private final double timeMin;
-        private final double weight; // combined weight = 0.5*dist + 0.5*time
+        public final double weight;
 
         public Edge(String destination, double distanceKm, double timeMin, double weight) {
             this.destination = destination;

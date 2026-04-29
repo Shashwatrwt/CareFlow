@@ -6,8 +6,8 @@ import utils.Dijkstra;
 import java.util.*;
 
 public class RoutingService {
-
     private final Graph hospitalGraph;
+
     private final Set<String> nodeNames;
 
     public RoutingService() {
@@ -36,7 +36,6 @@ public class RoutingService {
     private Graph buildCityGraph() {
         Graph graph = new Graph();
 
-        // Format: addEdge(graph, "A", "B", distanceKm, timeMin)
         addEdge(graph, "Careflow City Hospital", "Ballupur",        2.1,  5.0);
         addEdge(graph, "Careflow City Hospital", "Nehru Colony",    3.2,  7.0);
         addEdge(graph, "Careflow City Hospital", "Raipur",          4.5, 10.0);

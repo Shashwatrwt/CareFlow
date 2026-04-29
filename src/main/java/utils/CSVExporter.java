@@ -5,9 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Utility for exporting patient data to CSV format.
- */
+
 public class CSVExporter {
     
     public static void exportPatients(String filePath, List<Patient> patients) throws IOException {

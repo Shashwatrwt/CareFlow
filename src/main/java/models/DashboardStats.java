@@ -1,8 +1,6 @@
 package models;
 
-/**
- * Dashboard statistics model.
- */
+
 public class DashboardStats {
     private int totalPatients;
     private int occupiedBeds;

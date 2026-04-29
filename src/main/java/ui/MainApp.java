@@ -8,9 +8,7 @@ import java.util.logging.Level;
 
 public class MainApp extends Application {
 
-    static {
-        Logger.getLogger("com.gluonhq").setLevel(Level.SEVERE);
-    }
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {

@@ -3,50 +3,49 @@ package models;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Represents discharged patient history.
- */
+
 public class PatientHistory {
     private int id;
-    private String name;
-    private int age;
-    private String severity;
-    private int bedId;
+    private int patientId;
+    private String patientName;
     private LocalDateTime dischargedAt;
+    private int stayDuration;
+    private String finalStatus;
 
     public PatientHistory() {}
 
-    public PatientHistory(int id, String name, int age, String severity, int bedId, LocalDateTime dischargedAt) {
+    public PatientHistory(int id, int patientId, String patientName, LocalDateTime dischargedAt, int stayDuration, String finalStatus) {
         this.id = id;
-        this.name = name;
-        this.age = age;
-        this.severity = severity;
-        this.bedId = bedId;
+        this.patientId = patientId;
+        this.patientName = patientName;
         this.dischargedAt = dischargedAt;
+        this.stayDuration = stayDuration;
+        this.finalStatus = finalStatus;
     }
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public int getPatientId() { return patientId; }
+    public void setPatientId(int patientId) { this.patientId = patientId; }
 
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
-
-    public String getSeverity() { return severity; }
-    public void setSeverity(String severity) { this.severity = severity; }
-
-    public int getBedId() { return bedId; }
-    public void setBedId(int bedId) { this.bedId = bedId; }
+    public String getPatientName() { return patientName; }
+    public void setPatientName(String patientName) { this.patientName = patientName; }
 
     public LocalDateTime getDischargedAt() { return dischargedAt; }
     public void setDischargedAt(LocalDateTime dischargedAt) { this.dischargedAt = dischargedAt; }
 
+    public int getStayDuration() { return stayDuration; }
+    public void setStayDuration(int stayDuration) { this.stayDuration = stayDuration; }
+
+    public String getFinalStatus() { return finalStatus; }
+    public void setFinalStatus(String finalStatus) { this.finalStatus = finalStatus; }
+
     @Override
     public String toString() {
-        return String.format("History{id=%d, name='%s', age=%d, severity='%s', bedId=%d, discharged=%s}",
-                id, name, age, severity, bedId,
-                dischargedAt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+        return String.format("History{id=%d, patientId=%d, name='%s', discharged=%s, duration=%d hrs, status='%s'}",
+                id, patientId, patientName, 
+                dischargedAt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),
+                stayDuration, finalStatus);
     }
 }
