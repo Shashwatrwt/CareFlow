@@ -177,7 +177,7 @@ If you cannot install Maven but have downloaded the [JavaFX SDK](https://gluonhq
    ```
 
 ---
-
+##this project is careflow stimulation system not management system
 ## Database Notes
 
 - **Current Implementation:** The `PatientDAO` and `BedDAO` classes use **in-memory `ArrayList`s** for storage. No external database is required to run the application in its current state.
